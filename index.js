@@ -53,7 +53,23 @@ function getAllMovieTitles( movies ) {
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore( movies ) {
+
+  let highestMeta = 0
+
+  if( movies.length )
+    highestMeta = movies[0].metascore // setting as base
+
+  for( let i = 1; i < movies.length; i++ ){
+
+    if( highestMeta < movies[i].metascore )
+      highestMeta = movies[i].metascore 
+
+  } // ends forLoop()
+
+  return Number( highestMeta );
+
+} // ends getHighestMetaScore()
 
 /**
  * getAverageIMDBRating()
@@ -66,7 +82,20 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+ function getAverageIMDBRating(movies) {
+
+  let avgIMDB = 0;
+
+  for( let i = 0; i < movies.length; i++ ){
+    avgIMDB += Number( movies[i].imdbRating )
+  } // ends forLoop()
+
+  if( avgIMDB > 0 )
+    avgIMDB = avgIMDB/movies.length // if one of the movies does not have a rating. movies.length will not work here. Jose
+
+  return avgIMDB;
+
+} // ends getAverageIMDBRating() 
 
 /**
  * countByRating()
