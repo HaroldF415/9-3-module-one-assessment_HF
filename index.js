@@ -139,7 +139,20 @@ function getHighestMetascore( movies ) {
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+
+  let found = null;
+    
+  for( let i = 0; i < movies.length; i++ ){
+    
+    if( movies[i].imdbID === id )
+      return movies[i];
+    
+  } // ends forLoop
+    
+  return found
+    
+} // ends findById
 
 /**
  * filterByGenre()
