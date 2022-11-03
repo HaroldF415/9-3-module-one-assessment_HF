@@ -108,7 +108,22 @@ function getHighestMetascore( movies ) {
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+ function countByRating(movies) {
+
+  let ratingObj = {};
+
+  for( let i = 0; i < movies.length; i++ ){
+
+    if( !ratingObj[ movies[i].rated ] )
+      ratingObj[ movies[i].rated ] = 1
+    else
+      ratingObj[ movies[i].rated ] += 1
+
+  } // ends forLoop()
+
+  return ratingObj;
+
+} // ends countByRating()
 
 /**
  * findById()
